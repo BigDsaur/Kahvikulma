@@ -1,0 +1,26 @@
+.navbar {
+  display: flex;
+  justify-content: center;     /* center horizontally */
+  align-items: center;         /* center vertically */
+  padding: 25px 0;
+  background-color: #faf5e6;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: #c0a275;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.navbar-links a:hover {
+  color: #8c744f;
+}

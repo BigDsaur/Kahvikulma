@@ -1,13 +1,18 @@
 import { useState } from 'react'
-import './app.css'
+import Navbar from "./components/Navbar";
 
 const App = () => {
-
   return (
     <>
-      <h1>Vite + React</h1>
+      <Navbar />
+
+      {/* Your SPA sections: */}
+      <section id="meista">...</section>
+      <section id="yhteys">Minä, sinä, hän</section>
+      <section id="aukiolo">Ma - Su 10.00 - 18.00</section>
+
     </>
-  )
+  );
 }
 
-export default App
+export default App;
