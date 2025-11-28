@@ -12,4 +12,17 @@ router.get('/', async (req, res) => {
   }
 });
 
+// POST new opening hours
+router.post('/', async (req, res) => {
+  const { day, open, close } = req.body;
+
+  try {
+    const hours = new OpeningHours({ day, open, close });
+    const saved = await hours.save();
+    res.status(201).json(saved);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
 module.exports = router;
