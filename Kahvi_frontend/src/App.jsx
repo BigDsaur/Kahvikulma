@@ -16,8 +16,6 @@ const App = () => {
   return (
     <>
       <Navbar />
-
-       /* Tietoa meistä /
       <section id="meista" className="section about">
         <div className="content">
           <h2>Tietoa meistä</h2>
