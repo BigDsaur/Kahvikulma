@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/BigDsaur/Kahvikulma/issues"
   },
-  "homepage": "https://github.com/BigDsaur/Kahvikulma#readme"
+  "homepage": "https://github.com/BigDsaur/Kahvikulma#readme",
+  "dependencies": {
+    "mongoose": "^9.0.0"
+  }
 }
