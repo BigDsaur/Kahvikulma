@@ -27,13 +27,13 @@
 .navbar-links a {
   text-decoration: none;
   font-size: 1.25rem;
-  color: #c0a275;
+  color: #8c744f;    
   font-weight: 600;
   transition: 0.2s;
 }
 
 .navbar-links a:hover {
-  color: #8c744f;
+  color: #6a5438;     
 }
 
 /* HAMBURGER BUTTON (hidden on desktop) */
@@ -43,7 +43,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #c0a275;
+  color: #8c744f;
   position: absolute;
   right: 20px;
 }
@@ -57,7 +57,7 @@
   .navbar-links {
     display: none;
     flex-direction: column;
-    background-color: #faf5e6;
+    background-color: #F4C2C2;
     width: 100%;
 
     position: absolute;
