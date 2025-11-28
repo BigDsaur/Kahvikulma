@@ -16,8 +16,9 @@ const Navbar = () => {
 
         <ul className={`navbar-links ${open ? "open" : ""}`}>
           <li><a href="#meista">Tietoa meistä</a></li>
-          <li><a href="#yhteys">Yhteystiedot</a></li>
           <li><a href="#aukiolo">Aukioloajat</a></li>
+          <li><a href="#yhteys">Yhteystiedot</a></li>
+          
         </ul>
       </div>
     </nav>

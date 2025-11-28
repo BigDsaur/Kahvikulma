@@ -1,0 +1,30 @@
+.section {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.section .content {
+  max-width: 800px;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #8c744f;
+  font-weight: 700;
+}
+
+.section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #5a4a38;
+  margin-bottom: 15px;
+}
+
+/* Add a soft divider between sections */
+.section:not(:last-child) {
+  border-bottom: 2px solid rgba(0,0,0,0.05);
+  padding-bottom: 100px;
+  margin-bottom: 40px;
+}
