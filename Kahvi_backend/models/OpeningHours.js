@@ -6,4 +6,4 @@ const openingHoursSchema = new mongoose.Schema({
   close: { type: String, required: true },
 });
 
-module.exports = mongoose.model('OpeningHours', openingHoursSchema);
+module.exports = mongoose.model('OpeningHours', openingHoursSchema, 'Aukioloajat');
