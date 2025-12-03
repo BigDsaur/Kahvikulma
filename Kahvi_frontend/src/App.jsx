@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbarkoti";
 
 const App = () => {
   const [hours, setHours] = useState([]);
