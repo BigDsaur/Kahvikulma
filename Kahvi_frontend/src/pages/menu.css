@@ -1,43 +1,48 @@
-.menu-page {
-  padding: 80px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.menu-title {
+h1{
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #8c744f;
 }
 
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-}
-
-.menu-item {
-  background: rgba(255,255,255,0.5);
+.menu-list-container {
+  background-color: #f78dcb41;
+  max-width: 900px;
+  margin: 40px auto;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0px 4px 14px rgba(0,0,0,0.1);
-  backdrop-filter: blur(4px);
 }
 
-.menu-item h3 {
-  margin: 0;
-  font-size: 1.4rem;
-  color: #8c744f;
+.category-title {
+  font-size: 1.8rem;
+  color: #000000;
+  margin: 30px 0 15px 0;
+  font-style: italic;
 }
 
-.menu-item .price {
-  font-weight: bold;
-  margin: 5px 0;
-  color: #6a5438;
+.menu-row {
+  margin-bottom: 25px;
 }
 
-.menu-item .desc {
-  font-size: 1rem;
-  color: #5a4a38;
+.menu-row-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+.menu-name {
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+.menu-price {
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+.menu-dots {
+  border-bottom: 2px dotted #000000;
+  margin: 0 10px;
+}
+
+.menu-description {
+  margin-top: 5px;
+  color: #7d6a4a;
 }
