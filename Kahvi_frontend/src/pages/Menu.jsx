@@ -36,7 +36,8 @@ const Menu = () => {
                     <span className="menu-dots"></span>
                     <span className="menu-price">{item.hinta} €</span>
                   </div>
-
+                  <p className="menu-ingredients"><b>Ainesosat:</b> {item.ainesosat.join(", ")}</p>
+                  <p className="menu-erikoisruokavaliot"><b>Erikoisruokavaliot:</b> {item.erikoisruokavalio.join(", ")}</p>
                   <p className="menu-description">{item.kuvaus}</p>
                 </div>
               ))}
