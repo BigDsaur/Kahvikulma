@@ -59,17 +59,33 @@ const EditMenu = () => {
 
       {/* List every menu item */}
       {menu.map(item => (
-        <div key={item._id} style={{ marginBottom: "20px", borderBottom: "1px solid #ccc", paddingBottom: "15px" }}>
-          <h3>{item.nimi} — {item.hinta} €</h3>
-          <p>{item.kuvaus}</p>
-          <p><b>Luokka:</b> {item.luokka}</p>
+  <div key={item._id} className="menu-item-edit">
 
-          <button onClick={() => startEdit(item)}>Muokkaa</button>
-          <button onClick={() => deleteItem(item._id)} style={{ marginLeft: "10px", color: "red" }}>
-            Poista
-          </button>
-        </div>
-      ))}
+    <h3>{item.nimi} — {item.hinta} €</h3>
+
+    <p><b>Luokka:</b> {item.luokka}</p>
+
+    {/* ➤ Show ingredients */}
+    {item.ainesosat && item.ainesosat.length > 0 && (
+      <p><b>Ainesosat:</b> {item.ainesosat.join(", ")}</p>
+    )}
+
+    {/* ➤ Show diets */}
+    {item.erikoisruokavalio && item.erikoisruokavalio.length > 0 && (
+      <p><b>Erikoisruokavaliot:</b> {item.erikoisruokavalio.join(", ")}</p>
+    )}
+
+    {item.kuvaus && <p>{item.kuvaus}</p>}
+
+    <button onClick={() => startEditing(item)}>Muokkaa</button>
+    <button onClick={() => deleteItem(item._id)} style={{ marginLeft: "10px" }}>
+      Poista
+    </button>
+
+    <hr />
+
+  </div>
+))}
 
       {/* Edit window */}
       {editing && (
