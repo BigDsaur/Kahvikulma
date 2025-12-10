@@ -11,6 +11,9 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
+const menuRouter = require('./routes/menu');
+app.use('/api/menu', menuRouter);
+
 const openingHoursRouter = require('./routes/openingHours');
 app.use('/api/opening-hours', openingHoursRouter);
 
