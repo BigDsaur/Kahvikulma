@@ -40,6 +40,8 @@ const App = () => {
 
   return (
     <>
+      <div className="bg-left"></div>
+      <div className="bg-right"></div>
       <Navbar />
 
       <section id="meista" className="section about">
@@ -87,11 +89,11 @@ const App = () => {
       </section>
 
       {/* toi on tuo uus "contactformi homma" */}
-      <section id="viesti" className="section">
+      <section id="viesti" className="section viesti">
         <div className="content">
           <h2>Lähetä meille viesti</h2>
 
-          <form onSubmit={handleSubmit} style={{ maxWidth: "500px" }}>
+          <form onSubmit={handleSubmit}>
             <input
               type="text"
               name="name"

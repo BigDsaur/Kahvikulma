@@ -2,6 +2,40 @@ html {
   scroll-behavior: smooth;
 }
 
+.contact h2 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.contact p {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.opening-hours {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* optional */
+}
+
+.opening-hours h2 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.opening-hours ul {
+  display: block;
+  padding-left: 0;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.opening-hours li {
+  font-size: 1.5rem;   /* Bigger text */
+  line-height: 2rem; /* More spacing */
+  margin-bottom: 6px;  /* Small gap between lines */
+}
+
 .section {
   padding: 80px 20px;
   display: flex;
@@ -15,20 +49,112 @@ html {
 .section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #8c744f;
+  color: #000000;
   font-weight: 700;
 }
 
 .section p {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #5a4a38;
+  color: #000000;
   margin-bottom: 15px;
 }
 
 /* Add a soft divider between sections */
 .section:not(:last-child) {
-  border-bottom: 2px solid rgba(0,0,0,0.05);
   padding-bottom: 100px;
   margin-bottom: 40px;
+}
+
+.bg-left {
+  position: fixed;     /* stays in place, does NOT push content */
+  top: 0;
+  left: 0;
+  width: 30vw;         /* left half of screen */
+  height: 100vh;       /* full height */
+  z-index: -1;         /* behind everything */
+  pointer-events: none;
+
+  background-image: url('/src/assets/kahvikulmajoulu1.jpg');
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+
+  /* Fade to right */
+  mask-image: linear-gradient(to right, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 50%, transparent 85%);
+}
+
+.bg-right{
+  position: fixed;     /* stays in place, does NOT push content */
+  top: 0;
+  right: 0;
+  width: 30vw;         /* left half of screen */
+  height: 100vh;       /* full height */
+  z-index: -1;         /* behind everything */
+  pointer-events: none;
+
+  background-image: url('/src/assets/kahvikulmajoulu2.jpg');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+
+  /* Fade to left */
+  mask-image: linear-gradient(to left, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to left, black 50%, transparent 85%);
+}
+
+.bg-left,
+.bg-right {
+  transition: opacity 1.5s ease-in-out;
+}
+
+@media (max-width: 900px) {
+  .bg-left,
+  .bg-right {
+    opacity: 0;
+  }
+}
+
+.viesti h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.viesti form {
+  display: flex;
+  flex-direction: column;   /* stack items */
+  gap: 12px;                /* spacing between fields */
+  width: 480px;             /* reasonable width */
+  margin: 0 auto;           /* center the form */
+}
+
+.viesti input,
+.viesti textarea {
+  width: 100%;              /* full width inside the form */
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.viesti textarea {
+  height: 120px;            /* bigger textbox for message */
+  resize: vertical;         /* user can resize if needed */
+}
+
+.viesti button {
+  padding: 10px;
+  background-color: #d6f744af;
+  color: rgba(0, 0, 0, 0.829);
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.viesti button:hover {
+  background-color: #b18050;
 }
