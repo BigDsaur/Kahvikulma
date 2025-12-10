@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 const Admin = () => {
   return (
     <div style={{ textAlign: "center", marginTop: "80px" }}>
-      <h1>Admin Paneli</h1>
-      <p>Valitse mitä haluat muokata:</p>
+      <h1>Muutos Paneli</h1>
 
       <div style={{ marginTop: "40px" }}>
         <Link

@@ -62,12 +62,12 @@ const App = () => {
 
       
       <section id="aukiolo" className="section opening-hours">
-        <h2>Aukiolo</h2>
+        <h2>Aukioloajat</h2>
         <ul style={{ listStyle: "none", padding: 0 }}>
           {hours.length > 0 ? (
             hours.map(hour => (
               <li key={hour._id}>
-                {hour.day}: {hour.open} - {hour.close}
+                {hour.day}: {hour.open === "Suljettu" ? "Suljettu" : `${hour.open} - ${hour.close}`}
               </li>
             ))
           ) : (
