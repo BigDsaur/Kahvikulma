@@ -79,19 +79,21 @@ const EditMenu = () => {
 
   .info-row {
     display: flex;
-    gap: 20px;   /* spacing between items */
-    flex-wrap: wrap; /* if screen is small, they wrap cleanly */
-    margin-bottom: 10px;
+    gap: 20px;
+    flex-wrap: wrap;          /* wraps to next line on small screens */
+    align-items: baseline;    /* aligns text baselines */
+    margin-bottom: 8px;
   }
 
   .info-row p {
-    margin: 0; 
-    white-space: nowrap; /* keeps them cleaner */
+    margin: 0;
+    white-space: normal;      /* was nowrap; let long text wrap */
   }
 
   .kuvaus {
-    margin-top: 5px;
-  }
+    margin-top: 6px;
+  } 
+
 
   .edit-input {
     width: 20%;
@@ -173,30 +175,23 @@ const EditMenu = () => {
       {/* ----------- MENU LIST ----------- */}
       {menu.map((item) => (
         <div key={item._id} className="menu-item-edit">
-          <h3>
-            {item.nimi} — {item.hinta} €
-          </h3>
+          <h3>{item.nimi} — {item.hinta} €</h3>
 
-          <p>
-            <b>Luokka:</b> {item.luokka}
-          </p>
+          <div className="info-row">
+            <p><b>Luokka:</b> {item.luokka}</p>
 
-          {item.ainesosat?.length > 0 && (
-            <p>
-              <b>Ainesosat:</b> {item.ainesosat.join(", ")}
-            </p>
-          )}
+            {item.ainesosat.length > 0 && (
+              <p><b>Ainesosat:</b> {item.ainesosat.join(", ")}</p>
+            )}
 
-          {item.erikoisruokavalio?.length > 0 && (
-            <p>
-              <b>Erikoisruokavaliot:</b> {item.erikoisruokavalio.join(", ")}
-            </p>
-          )}
+            {item.erikoisruokavalio.length > 0 && (
+              <p><b>Erikoisruokavaliot:</b> {item.erikoisruokavalio.join(", ")}</p>
+            )}
+          </div>
 
-          {item.kuvaus && <p>{item.kuvaus}</p>}
+          {item.kuvaus && <p className="kuvaus">{item.kuvaus}</p>}
 
           <button onClick={() => startEdit(item)}>Muokkaa</button>
-
           <button
             onClick={() => deleteItem(item._id)}
             style={{ marginLeft: "10px" }}
