@@ -6,11 +6,21 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: #1D3F1D;
+  background-color: #68a568;
   padding: 15px 0;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.navbar-left {
+  cursor: pointer;
+}
+
+.nav-logo {
+  margin-left: -110px;
+  height: 50px;       /* adjust size */
+  width: auto;
 }
 
 .nav-center {

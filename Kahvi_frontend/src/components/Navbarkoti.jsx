@@ -1,11 +1,15 @@
 import { useState } from "react";
 import "./Navbar.css";
+import logo from "../assets/Kahvikulmalogo.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
     <nav className="navbar">
+      <div className="navbar-left">
+        <img src={logo} alt="Kahvikulma Logo" className="nav-logo" />
+      </div>
       <div className="nav-center">
         <button className="hamburger" onClick={() => setOpen(!open)}>
           <span></span>
