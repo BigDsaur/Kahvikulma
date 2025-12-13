@@ -13,6 +13,7 @@ const Kotisivu = () => {
     message: ""
   });
 
+  const [consent, setConsent] = useState(false); // ✅ Consent state
   const [status, setStatus] = useState("");
 
   useEffect(() => {
@@ -36,6 +37,7 @@ const Kotisivu = () => {
       .then(() => {
         setStatus("Viestisi on lähetetty!");
         setFormData({ name: "", phone: "", email: "", message: "" });
+        setConsent(false); // reset consent
       })
       .catch(() => setStatus("Viestin lähetys epäonnistui."));
   };
@@ -51,8 +53,7 @@ const Kotisivu = () => {
           <p>Kahvikulma on kolmen siskoksen pitämä kahvila Mäntyharjun keskustassa. Kahvila avasi ovensa syyskuussa 2025.</p>
           <p>Kahvilastamme löytyy päivittäin vaihtuva valikoima erilaisia makeita ja suolaisia herkkuja. Leivomme ja paistamme päivittäin muun muassa tuoretta pullaa, viinereitä ja munkkeja.</p>
           <p>Lämpimästi tervetuloa Kahvikulmaan!</p>
-          <p>Terkuin <p>
-            </p>Krakaun siskokset!</p>
+          <p>Terkuin <p>Krakaun siskokset!</p></p>
         </div>
       </section>
 
@@ -124,7 +125,24 @@ const Kotisivu = () => {
               required
             ></textarea>
 
-            <button type="submit">Lähetä viesti</button>
+            
+            <label style={{ display: "block", marginTop: "12px" }}>
+              <input
+                type="checkbox"
+                checked={consent}
+                onChange={(e) => setConsent(e.target.checked)}
+                required
+              />{" "}
+              Hyväksyn tietojeni käsittelemisen ja tallentamisen{" "}
+              <a href="/tietosuojaseloste" target="_blank" rel="noopener noreferrer">
+                tietosuojaselosteessa
+              </a>{" "}
+              määritetyllä tavalla. *
+            </label>
+
+            <button type="submit" disabled={!consent}>
+              Lähetä viesti
+            </button>
           </form>
 
           {status && <p>{status}</p>}

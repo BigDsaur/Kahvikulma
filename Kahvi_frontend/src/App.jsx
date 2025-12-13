@@ -6,6 +6,8 @@ import EditHours from "./pages/Admin/edithours";
 import Admin from "./pages/Admin/admin";
 import Login from "./pages/Admin/Login";
 import RequireAdmin from "./components/RequireAdmin";
+import Tietosuojaseloste from "./pages/tietosuojaseloste";
+
 
 const App = () => {
   return (
@@ -16,6 +18,9 @@ const App = () => {
 
         {/* Menu page */}
         <Route path="/menu" element={<Menu />} />
+
+        <Route path="/tietosuojaseloste" element={<Tietosuojaseloste />} />
+
 
         {/* Admin pages */}
         <Route path="/admin/login" element={<Login />} />
