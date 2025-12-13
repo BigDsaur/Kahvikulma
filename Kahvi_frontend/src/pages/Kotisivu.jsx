@@ -49,17 +49,9 @@ const Kotisivu = () => {
         <div className="content">
           <h2>Tietoa meistä</h2>
           <p>
-            Kahvilamme on toiminut jo vuosikymmenten ajan historiallisessa
-            ympäristössä tarjoten asiakkaille rauhallisen paikan nauttia
-            kahvista, leivonnaisista ja kiireettömistä hetkistä.
+            Kahvikulma on kolmen siskoksen pitämä kahvila Mäntyharjun keskustassa. Kahvila avasi ovensa syyskuussa 2025.
           </p>
-          <p>
-            Valmistamme tuotteemme laadukkaista raaka-aineista ja pyrimme
-            tukemaan paikallisia tuottajia aina kun mahdollista.
-          </p>
-          <p>
-            Tervetuloa viihtymään — yksin, ystävien tai perheen kanssa.
-          </p>
+          
         </div>
       </section>
 
@@ -86,15 +78,9 @@ const Kotisivu = () => {
       <section id="yhteys" className="section contact">
         <div className="content">
           <h2>Yhteystiedot</h2>
-          <p>
-            <b>Osoite</b> Esimerkkikatu 5, 00100 Helsinki
-          </p>
-          <p>
-            <b>Puhelin</b> 040 123 4567
-          </p>
-          <p>
-            <b>Sähköposti</b> info@kahvila.fi
-          </p>
+          <p>Pentinpolku 1, 52700 Mäntyharju (Mäntyharjun liikekeskus)</p>
+          <p>puh. 0458529318</p>
+          <p>info@kahvila.fi</p>
           <p>Vastaamme sähköposteihin arkisin mahdollisimman nopeasti.</p>
         </div>
       </section>
