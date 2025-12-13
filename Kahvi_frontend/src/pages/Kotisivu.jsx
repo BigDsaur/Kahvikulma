@@ -48,14 +48,14 @@ const Kotisivu = () => {
       <section id="meista" className="section about">
         <div className="content">
           <h2>Tietoa meistä</h2>
-          <p>
-            Kahvikulma on kolmen siskoksen pitämä kahvila Mäntyharjun keskustassa. Kahvila avasi ovensa syyskuussa 2025.
-          </p>
-          
+          <p>Kahvikulma on kolmen siskoksen pitämä kahvila Mäntyharjun keskustassa. Kahvila avasi ovensa syyskuussa 2025.</p>
+          <p>Kahvilastamme löytyy päivittäin vaihtuva valikoima erilaisia makeita ja suolaisia herkkuja. Leivomme ja paistamme päivittäin muun muassa tuoretta pullaa, viinereitä ja munkkeja.</p>
+          <p>Lämpimästi tervetuloa Kahvikulmaan!</p>
+          <p>Terkuin <p>
+            </p>Krakaun siskokset!</p>
         </div>
       </section>
 
-      {/* —————— Aukioloajat —————— */}
       <section id="aukiolo" className="section opening-hours">
         <h2>Aukioloajat</h2>
         <ul style={{ listStyle: "none", padding: 0 }}>
@@ -74,7 +74,6 @@ const Kotisivu = () => {
         </ul>
       </section>
 
-      {/* —————— Yhteystiedot —————— */}
       <section id="yhteys" className="section contact">
         <div className="content">
           <h2>Yhteystiedot</h2>
