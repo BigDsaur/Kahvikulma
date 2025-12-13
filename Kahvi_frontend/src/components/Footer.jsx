@@ -4,7 +4,7 @@ import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
       <div className="footer-column footer-left">
         <img src={logo} alt="Kahvikulma logo" className="footer-logo" />
         <div className="social-icons">
