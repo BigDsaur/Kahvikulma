@@ -8,6 +8,7 @@ import Login from "./pages/Admin/Login";
 import RequireAdmin from "./components/RequireAdmin";
 import Tietosuojaseloste from "./pages/tietosuojaseloste";
 import Yhteydenotto from "./pages/Yhteydenotto";
+import Footer from "./components/Footer";
 
 
 
@@ -35,6 +36,7 @@ const App = () => {
         <Route path="/admin/menu" element={<RequireAdmin><EditMenu /></RequireAdmin>} />
         <Route path="/admin/hours" element={<RequireAdmin><EditHours /></RequireAdmin>} />
       </Routes>
+      <Footer />
     </Router>
   );
 };

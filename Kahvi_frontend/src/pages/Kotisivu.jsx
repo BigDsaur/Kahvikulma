@@ -58,6 +58,7 @@ const Kotisivu = () => {
           <p>Vastaamme sähköposteihin arkisin mahdollisimman nopeasti.</p>
         </div>
       </section>
+
     </>
   );
 };
