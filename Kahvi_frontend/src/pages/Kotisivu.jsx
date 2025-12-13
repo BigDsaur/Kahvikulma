@@ -70,7 +70,7 @@ const Kotisivu = () => {
           {hours.length > 0 ? (
             hours.map((hour) => (
               <li key={hour._id}>
-                {hour.day}:{" "}
+                {hour.day}{" "}
                 {hour.open === "Suljettu"
                   ? "Suljettu"
                   : `${hour.open} - ${hour.close}`}
@@ -87,13 +87,13 @@ const Kotisivu = () => {
         <div className="content">
           <h2>Yhteystiedot</h2>
           <p>
-            <b>Osoite:</b> Esimerkkikatu 5, 00100 Helsinki
+            <b>Osoite</b> Esimerkkikatu 5, 00100 Helsinki
           </p>
           <p>
-            <b>Puhelin:</b> 040 123 4567
+            <b>Puhelin</b> 040 123 4567
           </p>
           <p>
-            <b>Sähköposti:</b> info@kahvila.fi
+            <b>Sähköposti</b> info@kahvila.fi
           </p>
           <p>Vastaamme sähköposteihin arkisin mahdollisimman nopeasti.</p>
         </div>

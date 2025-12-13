@@ -27,24 +27,28 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-left">
-        <img src={logo} alt="Kahvikulma Logo" className="nav-logo" onClick={() => navigate("/")} />
-      </div>
 
-      <div className="nav-center">
-        <button className="hamburger" onClick={() => setOpen(!open)}>
-          <span></span><span></span><span></span>
-        </button>
+  <div className="navbar-left">
+    <img src={logo} className="nav-logo" onClick={() => navigate("/")} />
+  </div>
 
-        <ul className={`navbar-links ${open ? "open" : ""}`}>
-          <li onClick={() => goToSection("meista")}>Meistä</li>
-          <li><a href="/menu">Tuotteet</a></li>
-          <li onClick={() => goToSection("tilaukset")}>Tilaukset</li>
-          <li onClick={() => goToSection("aukiolo")}>Aukioloajat</li>
-          <li onClick={() => goToSection("yhteys")}>Yhteystiedot</li>
-        </ul>
-      </div>
-    </nav>
+  <div className="nav-center">
+    <ul className={`navbar-links ${open ? "open" : ""}`}>
+      <li onClick={() => goToSection("meista")}>Meistä</li>
+      <li><a href="/menu">Tuotteet</a></li>
+      <li onClick={() => goToSection("tilaukset")}>Tilaukset</li>
+      <li onClick={() => goToSection("aukiolo")}>Aukioloajat</li>
+      <li onClick={() => goToSection("yhteys")}>Yhteystiedot</li>
+    </ul>
+  </div>
+
+  <div className="navbar-right">
+    <button className="hamburger" onClick={() => setOpen(!open)}>
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+</nav>
   );
 };
 
