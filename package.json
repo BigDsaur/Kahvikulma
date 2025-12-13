@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/BigDsaur/Kahvikulma#readme",
   "dependencies": {
-    "mongoose": "^9.0.0"
+    "mongoose": "^9.0.0",
+    "nodemailer": "^7.0.11"
   }
 }
