@@ -1,28 +1,47 @@
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../assets/Kahvikulmalogo.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const goToSection = (id) => {
+    if (location.pathname !== "/") {
+      // Redirect to homepage first
+      navigate("/");
+
+      // Wait a tiny moment to ensure homepage loads
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      // Already on homepage → scroll directly
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
+
+    setOpen(false);
+  };
 
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <img src={logo} alt="Kahvikulma Logo" className="nav-logo" />
+        <img src={logo} alt="Kahvikulma Logo" className="nav-logo" onClick={() => navigate("/")} />
       </div>
+
       <div className="nav-center">
         <button className="hamburger" onClick={() => setOpen(!open)}>
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
 
         <ul className={`navbar-links ${open ? "open" : ""}`}>
-          <li><a href="/menu">Menu</a></li>
-          <li><a href="#meista">Tietoa meistä</a></li>
-          <li><a href="#aukiolo">Aukioloajat</a></li>
-          <li><a href="#yhteys">Yhteystiedot</a></li>
-          
+          <li onClick={() => goToSection("meista")}>Meistä</li>
+          <li><a href="/menu">Tuotteet</a></li>
+          <li onClick={() => goToSection("tilaukset")}>Tilaukset</li>
+          <li onClick={() => goToSection("aukiolo")}>Aukioloajat</li>
+          <li onClick={() => goToSection("yhteys")}>Yhteystiedot</li>
         </ul>
       </div>
     </nav>

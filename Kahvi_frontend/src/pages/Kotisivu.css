@@ -66,56 +66,6 @@ html {
   margin-bottom: 40px;
 }
 
-.bg-left {
-  position: fixed;     /* stays in place, does NOT push content */
-  top: 0;
-  left: 0;
-  width: 30vw;         /* left half of screen */
-  height: 100vh;       /* full height */
-  z-index: -1;         /* behind everything */
-  pointer-events: none;
-
-  background-image: url('/src/assets/kahvikulmajoulu1.jpg');
-  background-size: cover;
-  background-position: left center;
-  background-repeat: no-repeat;
-
-  /* Fade to right */
-  mask-image: linear-gradient(to right, black 50%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, black 50%, transparent 85%);
-}
-
-.bg-right{
-  position: fixed;     /* stays in place, does NOT push content */
-  top: 0;
-  right: 0;
-  width: 30vw;         /* left half of screen */
-  height: 100vh;       /* full height */
-  z-index: -1;         /* behind everything */
-  pointer-events: none;
-
-  background-image: url('/src/assets/kahvikulmajoulu2.jpg');
-  background-size: cover;
-  background-position: right center;
-  background-repeat: no-repeat;
-
-  /* Fade to left */
-  mask-image: linear-gradient(to left, black 50%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to left, black 50%, transparent 85%);
-}
-
-.bg-left,
-.bg-right {
-  transition: opacity 1.5s ease-in-out;
-}
-
-@media (max-width: 900px) {
-  .bg-left,
-  .bg-right {
-    opacity: 0;
-  }
-}
-
 .viesti h2 {
   text-align: center;
   font-size: 2.5rem;

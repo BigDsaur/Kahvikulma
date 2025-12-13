@@ -1,5 +1,9 @@
 body {
-  background-color: rgba(220, 220, 220, 0.50);
+  background-color: rgb(225, 235, 215);
   min-height: 100vh;
   margin: 0;
+}
+
+* {
+  font-family: "Tenor Sans", sans-serif;
 }

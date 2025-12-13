@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import NavbarMenu from "../components/NavbarMenu";
+import Navbar from "../components/Navbarkoti";
 import "../components/Navbar.css";
 import "./Menu.css";
 
@@ -18,7 +18,7 @@ const Menu = () => {
 
   return (
     <>
-      <NavbarMenu />
+      <Navbar />
 
       <div className="menu-list-container">
         <h1>Menu</h1>
