@@ -6,41 +6,12 @@ import Navbar from "../components/Navbarkoti";
 const Kotisivu = () => {
   const [hours, setHours] = useState([]);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    message: ""
-  });
-
-  const [consent, setConsent] = useState(false); // ✅ Consent state
-  const [status, setStatus] = useState("");
-
   useEffect(() => {
     axios
       .get("http://localhost:5000/api/opening-hours")
       .then((res) => setHours(res.data))
       .catch((err) => console.error("Error fetching hours:", err));
   }, []);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:5000/api/messages", formData)
-      .then(() => {
-        setStatus("Viestisi on lähetetty!");
-        setFormData({ name: "", phone: "", email: "", message: "" });
-        setConsent(false); // reset consent
-      })
-      .catch(() => setStatus("Viestin lähetys epäonnistui."));
-  };
 
   return (
     <>
@@ -51,13 +22,14 @@ const Kotisivu = () => {
         <div className="content">
           <h2>Tietoa meistä</h2>
           <p>Kahvikulma on kolmen siskoksen pitämä kahvila Mäntyharjun keskustassa. Kahvila avasi ovensa syyskuussa 2025.</p>
-          <p>Kahvilastamme löytyy päivittäin vaihtuva valikoima erilaisia makeita ja suolaisia herkkuja. Leivomme ja paistamme päivittäin muun muassa tuoretta pullaa, viinereitä ja munkkeja.</p>
+          <p>Kahvilastamme löytyy päivittäin vaihtuva valikoima makeita ja suolaisia herkkuja. Leivomme ja paistamme päivittäin muun muassa tuoretta pullaa, viinereitä ja munkkeja.</p>
           <p>Lämpimästi tervetuloa Kahvikulmaan!</p>
-          <p>Terkuin </p>
+          <p>Terkuin</p>
           <p>Krakaun siskokset!</p>
         </div>
       </section>
 
+      {/* —————— Aukioloajat —————— */}
       <section id="aukiolo" className="section opening-hours">
         <h2>Aukioloajat</h2>
         <ul style={{ listStyle: "none", padding: 0 }}>
@@ -76,6 +48,7 @@ const Kotisivu = () => {
         </ul>
       </section>
 
+      {/* —————— Yhteystiedot —————— */}
       <section id="yhteys" className="section contact">
         <div className="content">
           <h2>Yhteystiedot</h2>
@@ -83,70 +56,6 @@ const Kotisivu = () => {
           <p>puh. 0458529318</p>
           <p>info@kahvila.fi</p>
           <p>Vastaamme sähköposteihin arkisin mahdollisimman nopeasti.</p>
-        </div>
-      </section>
-
-      {/* —————— Viestilomake —————— */}
-      <section id="viesti" className="section viesti">
-        <div className="content">
-          <h2>Lähetä meille viesti</h2>
-
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Nimi"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-
-            <input
-              type="text"
-              name="phone"
-              placeholder="Puhelinnumero"
-              value={formData.phone}
-              onChange={handleChange}
-            />
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Sähköposti"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-
-            <textarea
-              name="message"
-              placeholder="Viestisi"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-
-            
-            <label style={{ display: "block", marginTop: "12px" }}>
-              <input
-                type="checkbox"
-                checked={consent}
-                onChange={(e) => setConsent(e.target.checked)}
-                required
-              />{" "}
-              Hyväksyn tietojeni käsittelemisen ja tallentamisen{" "}
-              <a href="/tietosuojaseloste" target="_blank" rel="noopener noreferrer">
-                tietosuojaselosteessa
-              </a>{" "}
-              määritetyllä tavalla. *
-            </label>
-
-            <button type="submit" disabled={!consent}>
-              Lähetä viesti
-            </button>
-          </form>
-
-          {status && <p>{status}</p>}
         </div>
       </section>
     </>

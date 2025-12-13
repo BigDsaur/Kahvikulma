@@ -7,6 +7,8 @@ import Admin from "./pages/Admin/admin";
 import Login from "./pages/Admin/Login";
 import RequireAdmin from "./components/RequireAdmin";
 import Tietosuojaseloste from "./pages/tietosuojaseloste";
+import Yhteydenotto from "./pages/Yhteydenotto";
+
 
 
 const App = () => {
@@ -15,6 +17,11 @@ const App = () => {
       <Routes>
         {/* Homepage */}
         <Route path="/" element={<Kotisivu />} />
+
+
+        <Route path="/yhteydenotto" element={<Yhteydenotto />} />
+        
+
 
         {/* Menu page */}
         <Route path="/menu" element={<Menu />} />
