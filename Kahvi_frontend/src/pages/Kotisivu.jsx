@@ -7,39 +7,12 @@ import Kukkasohva from "../assets/Kukkasohva.jpg";
 const Kotisivu = () => {
   const [hours, setHours] = useState([]);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    message: ""
-  });
-
-  const [status, setStatus] = useState("");
-
   useEffect(() => {
     axios
       .get("http://localhost:5000/api/opening-hours")
       .then((res) => setHours(res.data))
       .catch((err) => console.error("Error fetching hours:", err));
   }, []);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:5000/api/messages", formData)
-      .then(() => {
-        setStatus("Viestisi on lähetetty!");
-        setFormData({ name: "", phone: "", email: "", message: "" });
-      })
-      .catch(() => setStatus("Viestin lähetys epäonnistui."));
-  };
 
   return (
     <>
