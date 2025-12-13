@@ -1,56 +1,9 @@
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-.section {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-/* --- Meistä Section --- */
-.about {
-  background-color: #F6E6D0; /* cream white */
-}
-
-/* --- Yhteystiedot Section --- */
-.contact {
-  background-color: #F6E6D0; /* warm beige */
-}
-
-.contact h2 {
-  text-align: center;
-  font-size: 2.5rem;
-}
-
-.contact p {
-  text-align: center;
-  font-size: 2rem;
-}
-
-.opening-hours {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* optional */
-}
-
-.opening-hours h2 {
-  text-align: center;
-  font-size: 2.5rem;
-}
-
-.opening-hours ul {
-  display: block;
-  padding-left: 0;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.opening-hours li {
-  font-size: 1.5rem;   /* Bigger text */
-  line-height: 2rem; /* More spacing */
-  margin-bottom: 6px;  /* Small gap between lines */
-}
-
+/* Generic section wrapper */
 .section {
   padding: 80px 20px;
   display: flex;
@@ -64,40 +17,169 @@ html {
 .section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #000000;
+  color: #000;
   font-weight: 700;
 }
 
 .section p {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #000000;
+  color: #000;
   margin-bottom: 15px;
 }
 
-/* Add a soft divider between sections */
+/* Divider between sections */
 .section:not(:last-child) {
   padding-bottom: 100px;
   margin-bottom: 40px;
 }
 
+/* --- ABOUT SECTION (Meistä) --- */
+.meista-section {
+  background-color: #F6E6D0;
+  padding: 60px 16px;
+}
+
+.meista-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.meista-text {
+  text-align: left;
+}
+
+.meista-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.meista-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* ABOUT IMAGE */
+.meista-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+/* --- Responsive layout (tablet/mobile) --- */
+@media (max-width: 950px) {
+  .meista-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .meista-text {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .meista-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .meista-text p {
+    font-size: 1rem;
+  }
+
+  .meista-image img {
+    width: 100%;
+    max-height: 500px;
+    height: auto;
+    border-radius: 16px;
+  }
+}
+
+/* --- Small phones (≤ 500px) --- */
+@media (max-width: 500px) {
+  .meista-section {
+    padding: 40px 10px;
+  }
+
+  .meista-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .meista-text p {
+    font-size: 0.95rem;
+  }
+
+  .meista-image img {
+    border-radius: 12px;
+  }
+}
+
+/* --- OPENING HOURS --- */
+.opening-hours {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.opening-hours h2 {
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+.opening-hours ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.opening-hours li {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  margin-bottom: 6px;
+}
+
+/* --- CONTACT SECTION --- */
+.contact {
+  background-color: #F6E6D0;
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+}
+
+.contact p {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+/* --- MESSAGE FORM --- */
 .viesti h2 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   margin-bottom: 30px;
 }
 
 .viesti form {
   display: flex;
-  flex-direction: column;   /* stack items */
-  gap: 12px;                /* spacing between fields */
-  width: 480px;             /* reasonable width */
-  margin: 0 auto;           /* center the form */
+  flex-direction: column;
+  gap: 12px;
+  width: 480px;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .viesti input,
 .viesti textarea {
-  width: 100%;              /* full width inside the form */
+  width: 100%;
   padding: 10px;
   font-size: 1rem;
   border: 1px solid #ccc;
@@ -105,14 +187,14 @@ html {
 }
 
 .viesti textarea {
-  height: 120px;            /* bigger textbox for message */
-  resize: vertical;         /* user can resize if needed */
+  height: 120px;
+  resize: vertical;
 }
 
 .viesti button {
   padding: 10px;
   background-color: #d6f744af;
-  color: rgba(0, 0, 0, 0.829);
+  color: rgba(0, 0, 0, 0.9);
   font-weight: bold;
   border: none;
   border-radius: 5px;
