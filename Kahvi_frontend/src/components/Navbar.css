@@ -1,14 +1,10 @@
-/* ---------------------------------- */
-/*            NAVBAR BASE             */
-/* ---------------------------------- */
-
 .navbar {
   width: 100%;
   min-height: 83px;
   background-color: #6ca56c;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 12px 40px;
   box-sizing: border-box;
   position: sticky;
@@ -32,14 +28,12 @@
   }
 }
 
-/* Center container */
 .nav-center {
   flex: 1;
   display: flex;
   justify-content: center;
 }
 
-/* Link list */
 .navbar-links {
   display: flex;
   gap: 50px;
@@ -63,10 +57,6 @@
   color: #2e4d2e;
 }
 
-/* ---------------------------------- */
-/*           HAMBURGER MENU           */
-/* ---------------------------------- */
-
 .hamburger {
   display: none;
   width: 30px;
@@ -89,18 +79,12 @@
   margin: 5px 0;
 }
 
-/* ---------------------------------- */
-/*      MOBILE NAV (KOTISIVU ONLY)    */
-/* ---------------------------------- */
-
 @media (max-width: 800px) {
-  /* Show hamburger ONLY on kotisivu */
-  .navbar:not(.navbar-menu) .hamburger {
+  .hamburger {
     display: block;
   }
 
-  /* Hide nav links initially */
-  .navbar:not(.navbar-menu) .navbar-links {
+  .navbar-links {
     display: none;
     flex-direction: column;
     width: 100%;
@@ -110,27 +94,7 @@
     background-color: #6ca56c;
   }
 
-  /* When open */
-  .navbar:not(.navbar-menu) .navbar-links.open {
+  .navbar-links.open {
     display: flex;
   }
-}
-
-/* ---------------------------------- */
-/*      MENU PAGE — ALWAYS FULL       */
-/* ---------------------------------- */
-
-.navbar-menu .hamburger {
-  display: none !important;
-}
-
-.navbar-menu .navbar-links {
-  display: flex !important;
-  flex-direction: row !important;
-  background: none !important;
-  gap: 50px !important;
-}
-
-.navbar-menu .nav-center {
-  justify-content: center !important;
 }

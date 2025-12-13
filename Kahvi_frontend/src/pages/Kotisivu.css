@@ -2,6 +2,21 @@ html {
   scroll-behavior: smooth;
 }
 
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* --- Meistä Section --- */
+.about {
+  background-color: #F6E6D0; /* cream white */
+}
+
+/* --- Yhteystiedot Section --- */
+.contact {
+  background-color: #F6E6D0; /* warm beige */
+}
+
 .contact h2 {
   text-align: center;
   font-size: 2.5rem;
