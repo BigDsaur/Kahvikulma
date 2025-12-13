@@ -1,3 +1,4 @@
+const verifyToken = require('../middleware/auth');
 const express = require('express');
 const router = express.Router();
 const MenuItem = require('../models/MenuItem');
@@ -13,7 +14,7 @@ router.get('/', async (req, res) => {
 });
 
 // POST new menu item
-router.post('/', async (req, res) => {
+router.post('/', verifyToken, async (req, res) => {
   const { nimi, hinta, ainesosat, luokka, kuvaus, erikoisruokavalio } = req.body;
 
   try {
@@ -35,7 +36,7 @@ router.post('/', async (req, res) => {
 });
 
 // PUT update menu item
-router.put('/:id', async (req, res) => {
+router.put('/:id', verifyToken,async (req, res) => {
   try {
     const updated = await MenuItem.findByIdAndUpdate(req.params.id, req.body, {
       new: true
@@ -49,7 +50,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // DELETE menu item
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', verifyToken, async (req, res) => {
   try {
     await MenuItem.findByIdAndDelete(req.params.id);
     res.json({ message: 'Menu item deleted' });
