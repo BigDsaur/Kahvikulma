@@ -13,12 +13,10 @@ import Taidenayttely from "./pages/Taidenayttely";
 
 
 
-
-
 const App = () => {
   return (
     <Router>
-      <main style={{ flex: 1 }}>
+      <main>
       <Routes>
         {/* Homepage */}
         <Route path="/" element={<Kotisivu />} />
