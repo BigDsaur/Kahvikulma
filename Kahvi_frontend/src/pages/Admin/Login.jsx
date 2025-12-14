@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 
-const API = import.meta.env.VITE_API_URL;
+const API = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -19,7 +19,10 @@ export default function Login() {
       const res = await axios.post(
         `${API}/api/auth/login`,
         { username, password },
-        { withCredentials: true }  // VERY IMPORTANT
+        {
+          withCredentials: true,
+          headers: { "Content-Type": "application/json" }
+        }
       );
 
       if (res.status === 200) {
