@@ -20,7 +20,6 @@ const Kotisivu = () => {
 
       <section id="meista" className="section meista">
         <div className="meista-container">
-
           <div className="meista-image">
             <img src={Kukkasohva} alt="Kahvilan tunnelma" />
           </div>
