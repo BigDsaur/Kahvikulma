@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbarkoti";
 import "../components/Navbar.css";
-import "./Menu.css";
+import "./menu.css";
 
 const Menu = () => {
   const [menuItems, setMenuItems] = useState([]);
