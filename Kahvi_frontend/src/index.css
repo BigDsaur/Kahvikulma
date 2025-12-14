@@ -4,6 +4,22 @@ body {
   margin: 0;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: block;
+}
+
 * {
   font-family: "Tenor Sans", sans-serif;
 }

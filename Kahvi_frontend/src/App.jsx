@@ -13,11 +13,10 @@ import Taidenayttely from "./pages/Taidenayttely";
 
 
 
-
-
 const App = () => {
   return (
     <Router>
+      <main>
       <Routes>
         {/* Homepage */}
         <Route path="/" element={<Kotisivu />} />
@@ -41,6 +40,7 @@ const App = () => {
         <Route path="/admin/menu" element={<RequireAdmin><EditMenu /></RequireAdmin>} />
         <Route path="/admin/hours" element={<RequireAdmin><EditHours /></RequireAdmin>} />
       </Routes>
+      </main>
       <Footer />
     </Router>
   );
