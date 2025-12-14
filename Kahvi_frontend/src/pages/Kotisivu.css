@@ -3,9 +3,13 @@ html {
   scroll-behavior: smooth;
 }
 
+.meista {
+  background-color: #1c351c; 
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 /* Generic section wrapper */
 .section {
-  padding: 80px 20px;
   display: flex;
   justify-content: center;
 }
@@ -28,12 +32,6 @@ html {
   margin-bottom: 15px;
 }
 
-/* Divider between sections */
-.section:not(:last-child) {
-  padding-bottom: 100px;
-  margin-bottom: 40px;
-}
-
 /* --- ABOUT SECTION (Meistä) --- */
 .meista-section {
   background-color: #F6E6D0;
@@ -53,6 +51,10 @@ html {
   text-align: left;
 }
 
+.meista-text h2, .meista-text p {
+  color: White;
+}
+
 .meista-text h2 {
   font-size: 2rem;
   margin-bottom: 20px;
@@ -66,10 +68,10 @@ html {
 
 /* ABOUT IMAGE */
 .meista-image img {
-  width: 100%;
-  height: 400px;
+  width: 90%;
+  height: 375px;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 36px;
   display: block;
 }
 
