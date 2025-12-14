@@ -20,14 +20,15 @@ const Footer = () => {
         <img src={logo} alt="Kahvikulma logo" className="footer-logo" />
         <div className="social-icons">
           <a
-            href="https://instagram.com/yourprofile"
+            href="https://www.instagram.com/kahvikulma/"
+
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaInstagram />
           </a>
           <a
-            href="https://facebook.com/yourprofile"
+            href="https://www.facebook.com/p/Kahvikulma-Mäntyharju-61579703596564/"
             target="_blank"
             rel="noopener noreferrer"
           >

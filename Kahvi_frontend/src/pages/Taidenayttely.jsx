@@ -30,7 +30,7 @@ const Taidenayttely = () => {
 
             <div className="taide-socials">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/kaisaparen/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -38,7 +38,7 @@ const Taidenayttely = () => {
               </a>
 
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/taidettakaisaparen/?locale=fi_FI"
                 target="_blank"
                 rel="noopener noreferrer"
               >
