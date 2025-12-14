@@ -37,7 +37,8 @@ const Navbar = () => {
       <li onClick={() => goToSection("meista")}>Meistä</li>
       <li><a href="/menu">Tuotteet</a></li>
       <li onClick={() => navigate("/yhteydenotto")}>Yhteydenotto</li>
-      <li onClick={() => goToSection("aukiolo")}>Aukioloajat</li>
+      <li onClick={() => navigate("/taidenayttely")}>Taidenäyttely</li>
+
       <li onClick={() => goToSection("footer")}>Yhteystiedot</li>
     </ul>
   </div>
