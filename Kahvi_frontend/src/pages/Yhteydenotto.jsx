@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbarkoti";
 
+const API = import.meta.env.VITE_API_URL;
+
 const Yhteydenotto = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -21,7 +23,7 @@ const Yhteydenotto = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/api/messages", formData)
+    axios.post(`${API}/api/messages`, formData)
       .then(() => {
         setStatus("Viestisi on lähetetty!");
         setFormData({ name: "", phone: "", email: "", message: "" });
