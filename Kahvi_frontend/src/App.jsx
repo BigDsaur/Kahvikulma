@@ -9,6 +9,9 @@ import RequireAdmin from "./components/RequireAdmin";
 import Tietosuojaseloste from "./pages/tietosuojaseloste";
 import Yhteydenotto from "./pages/Yhteydenotto";
 import Footer from "./components/Footer";
+import Taidenayttely from "./pages/Taidenayttely";
+
+
 
 
 
@@ -26,6 +29,8 @@ const App = () => {
 
         {/* Menu page */}
         <Route path="/menu" element={<Menu />} />
+        <Route path="/taidenayttely" element={<Taidenayttely />} />
+
 
         <Route path="/tietosuojaseloste" element={<Tietosuojaseloste />} />
 
