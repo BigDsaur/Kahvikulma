@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import "./Kotisivu.css";
 import Navbar from "../components/Navbarkoti";
 import Kukkasohva from "../assets/Kukkasohva.jpg";
@@ -9,15 +7,6 @@ import Tilaus from "../assets/Kakkukuva.jpg";
 
 
 const Kotisivu = () => {
-  const [hours, setHours] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/opening-hours")
-      .then((res) => setHours(res.data))
-      .catch((err) => console.error("Error fetching hours:", err));
-  }, []);
-
   return (
     <>
       <Navbar />

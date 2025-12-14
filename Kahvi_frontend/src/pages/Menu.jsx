@@ -3,11 +3,13 @@ import Navbar from "../components/Navbarkoti";
 import "../components/Navbar.css";
 import "./menu.css";
 
+const API = import.meta.env.VITE_API_URL;
+
 const Menu = () => {
   const [menuItems, setMenuItems] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/menu")
+    fetch(`${API}/api/menu`)
       .then((res) => res.json())
       .then((data) => setMenuItems(data))
       .catch((error) => console.log("Error fetching menu:", error));

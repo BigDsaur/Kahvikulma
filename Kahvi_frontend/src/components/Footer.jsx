@@ -4,12 +4,14 @@ import "./Footer.css";
 import logo from "../assets/Kahvikulmalogo.png";
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 
+const API = import.meta.env.VITE_API_URL;
+
 const Footer = () => {
   const [hours, setHours] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/opening-hours")
+      .get(`${API}/api/opening-hours`)
       .then((res) => setHours(res.data))
       .catch((err) => console.error("Error fetching hours:", err));
   }, []);

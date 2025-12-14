@@ -2,6 +2,9 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+
+const API = import.meta.env.VITE_API_URL;
+
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -14,7 +17,7 @@ export default function Login() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        `${API}/api/auth/login`,
         { username, password },
         { withCredentials: true }  // VERY IMPORTANT
       );
