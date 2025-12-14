@@ -3,6 +3,10 @@ import axios from "axios";
 import "./Kotisivu.css";
 import Navbar from "../components/Navbarkoti";
 import Kukkasohva from "../assets/Kukkasohva.jpg";
+import Suolainen from "../assets/Suolainenkuva.jpg";
+import Makea from "../assets/Pullakukilla.jpg";
+import Tilaus from "../assets/Kakkukuva.jpg";
+
 
 const Kotisivu = () => {
   const [hours, setHours] = useState([]);
@@ -35,6 +39,55 @@ const Kotisivu = () => {
 
         </div>
       </section>
+      <section className="section tuotteet">
+  <h2 className="tuotteet-title">Tuotteet</h2>
+
+  <div className="tuote-showcase">
+    <div className="tuote-card">
+      <img src={Makea} alt="Makeat tuotteet" />
+      <div className="tuote-text">
+        <h3>Makeat</h3>
+        <p>
+          Vitriinistämme löytyy päivittäin tuoreita
+          leivonnaisia, kuten pullaa, kääretorttua sekä
+          marjapiirakkaa.
+        </p>
+        <p>Lisäki valikoimassamme on päivittäin myös
+          gluteenittomia vaihtoehtoja.
+        </p>
+      </div>
+    </div>
+
+    <div className="tuote-card reverse">
+      <img src={Suolainen} alt="Suolaiset tuotteet" />
+      <div className="tuote-text">
+        <h3>Suolaiset</h3>
+        <p>
+          Valikoimastamme löytyy suolaisina
+          vaihtoehtoina muun muassa täytettyjä
+          patonkeja, croissantteja sekä suolaisia
+          piirakoita.
+        </p>
+      </div>
+    </div>
+
+    <div className="tuote-card">
+      <img src={Tilaus} alt="Tilaustuotteet" />
+      <div className="tuote-text">
+        <h3>Tilaustuotteet</h3>
+        <p>
+          Teemme tilauksesta myös erilaisia kakkuja
+          elämän eri tilanteisiin. Olitpa järjestänmässä
+          juhlia tai muita tilaisuuksia, meiltä voit tilata 
+          tarjottavaksi esimerkiksi voileipäkakkuja sekä
+          täytekakkuja.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+      
     </>
   );
 };

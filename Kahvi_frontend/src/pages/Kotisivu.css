@@ -176,3 +176,106 @@ html {
 .viesti button:hover {
   background-color: #b18050;
 }
+/* --- PRODUCT SHOWCASE --- */
+.tuotteet {
+  padding: 80px 20px;
+}
+
+.tuotteet-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 60px;
+}
+
+.tuote-showcase {
+  max-width: 900px; 
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0; 
+}
+.tuote-card {
+  display: flex;
+  height: 400px;
+  width: 100%;
+}
+
+.tuote-card img {
+  width: 55%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tuote-text {
+  width: 45%;
+  background-color: #284929;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.tuote-text h3 {
+  margin: 0 0 15px 0;
+  font-size: 2rem;
+}
+
+.tuote-text p {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.tuote-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.tuote-card.reverse img {
+  width: 45%;
+}
+
+.tuote-card.reverse .tuote-text {
+  width: 55%;
+}
+
+.tuote-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .tuote-card {
+    flex-direction: column; 
+    height: 250px; 
+  }
+
+  .tuote-card.reverse {
+    flex-direction: column; 
+  }
+
+  .tuote-card img,
+  .tuote-card.reverse img,
+  .tuote-text,
+  .tuote-card.reverse .tuote-text {
+    width: 100%; 
+    height: 50%; 
+  }
+
+  .tuote-text {
+    justify-content: center; 
+    padding: 10px; 
+  }
+
+  .tuote-text h3 {
+    font-size: 1.5rem; 
+  }
+
+  .tuote-text p {
+    font-size: 1rem; 
+  }
+}
+
