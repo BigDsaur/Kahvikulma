@@ -6,7 +6,7 @@ import EditHours from "./pages/Admin/edithours";
 import Admin from "./pages/Admin/admin";
 import Login from "./pages/Admin/Login";
 import RequireAdmin from "./components/RequireAdmin";
-import Tietosuojaseloste from "./pages/tietosuojaseloste";
+import Tietosuojaseloste from "./pages/Tietosuojaseloste";
 import Yhteydenotto from "./pages/Yhteydenotto";
 import Footer from "./components/Footer";
 import Taidenayttely from "./pages/Taidenayttely";
