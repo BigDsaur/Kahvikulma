@@ -32,7 +32,8 @@ router.post("/login", async (req, res) => {
         httpOnly: true,
         secure: true,       // required for HTTPS on Render
         sameSite: "None",    // required for cross-domain cookies
-        maxAge: 1000 * 60 * 1,  // 1 minute
+        maxAge: 10 * 60 * 1000,  // 10 minute
+        path: "/",
     });
 
     res.json({ message: "Login successful" });
