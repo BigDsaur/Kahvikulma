@@ -61,7 +61,7 @@ const Footer = () => {
         <h3>Yhteystiedot</h3>
         <p>Pentinpolku 1, 52700 Mäntyharju</p>
         <p>puh. 0458529318</p>
-        <p>info@kahvila.fi</p>
+        <p>kahvikulma.mantyharju@gmail.com</p>
       </div>
     </footer>
   );

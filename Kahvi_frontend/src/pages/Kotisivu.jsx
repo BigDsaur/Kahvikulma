@@ -20,10 +20,13 @@ const Kotisivu = () => {
           <div className="meista-text">
             <h2>Tietoa meistä</h2>
 
-            <p>Kahvikulma on kolmen siskoksen pitämä kahvila Mäntyharjun keskustassa. Kahvila avasi ovensa syyskuussa 2025.</p>
-            <p>Kahvilastamme löytyy päivittäin vaihtuva valikoima erilaisia makeita ja suolaisia herkkuja. Leivomme ja paistamme päivittäin muun muassa tuoretta pullaa, viinereitä ja munkkeja.</p>
+            <p>Kahvikulma on kolmen siskoksen pitämä kahvila Mäntyharjun keskustassa. 
+              Kahvila avasi ovensa syyskuussa 2025. 
+              Kahvilastamme löytyy päivittäin vaihtuva valikoima erilaisia makeita ja suolaisia herkkuja. 
+              Leivomme ja paistamme päivittäin muun muassa tuoretta pullaa, viinereitä ja munkkeja.</p>
             <p>Lämpimästi tervetuloa Kahvikulmaan!</p>
-            <p>Terveisin Krakaun siskokset!</p>
+            <p>Terkuin</p>
+            <p>Krakaun siskokset</p>
           </div>
 
         </div>
@@ -66,7 +69,7 @@ const Kotisivu = () => {
         <h3>Tilaustuotteet</h3>
         <p>
           Teemme tilauksesta myös erilaisia kakkuja
-          elämän eri tilanteisiin. Olitpa järjestänmässä
+          elämän eri tilanteisiin. Olitpa järjestämässä
           juhlia tai muita tilaisuuksia, meiltä voit tilata 
           tarjottavaksi esimerkiksi voileipäkakkuja sekä
           täytekakkuja.

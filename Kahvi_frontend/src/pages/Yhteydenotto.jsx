@@ -35,9 +35,15 @@ const Yhteydenotto = () => {
   return (
     <>
       <Navbar />
+      <h1 style= { { maxWidth: "500px", margin: "20px auto", padding: "0 10px", textAlign: "center" } }>Tilaukset</h1>
+      <p style= { { maxWidth: "500px", margin: "20px auto", padding: "0 10px", textAlign: "center" } }>
+        Meiltä voit tilata erilaisia kakkuja, olitpa sitten järjestämässä juhlia tai muita tilaisuuksia tai kenties herkuttelemassa muuten vain.
+        Kysy lisää kakuistamme ja hinnoista puhelimitse puh. 0458529318 tai sähköpostilla kahvikulma.mantyharju@gmail.com.
+      </p>
+
       <section className="section viesti">
         <div className="content">
-          <h2>Lähetä meille viesti</h2>
+          <h3 style= { {textAlign: "center" } }>Kysy lisää tilaustuotteistamme</h3>
           <form onSubmit={handleSubmit}>
             <input
               type="text"

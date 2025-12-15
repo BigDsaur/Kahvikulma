@@ -55,7 +55,7 @@ html {
 .meista-text p {
   font-size: 1.1rem;
   line-height: 1.7;
-  margin-bottom: 12px;
+  margin-bottom: 0px;
 }
 
 /* RESPONSIVE STACKING */

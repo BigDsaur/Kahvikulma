@@ -3,7 +3,7 @@
   justify-content: center; /* center all columns */
   align-items: flex-start;
   padding: 50px 80px; /* more space on sides */
-  background-color: #ffffff;
+  background: linear-gradient(to top,white 99%, rgb(217, 217, 217) 100%);
   color: #000000;
   font-family: Arial, sans-serif;
   gap: 60px; /* space between columns */

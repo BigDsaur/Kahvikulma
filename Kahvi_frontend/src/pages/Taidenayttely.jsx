@@ -18,12 +18,15 @@ const Taidenayttely = () => {
             <h1>Taidenäyttely</h1>
 
             <p>
-              Kahvilassamme on esillä pysyvä Kaisa
+              Kahvilassamme on esillä jatkuva Kaisa
               Parénin taidenäyttely.
             </p>
 
             <p>
               Tervetuloa ihastelemaan kauniita teoksia!
+            </p>
+            <p>
+              ps teokset ovat myös myynnissä!
             </p>
 
             <p className="taide-social-title">Kaisan löydät myös somesta:</p>

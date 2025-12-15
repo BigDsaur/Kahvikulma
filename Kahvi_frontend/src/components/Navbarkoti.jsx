@@ -36,7 +36,7 @@ const Navbar = () => {
     <ul className={`navbar-links ${open ? "open" : ""}`}>
       <li onClick={() => goToSection("meista")}>Meistä</li>
       <li><a href="/menu">Tuotteet</a></li>
-      <li onClick={() => navigate("/yhteydenotto")}>Yhteydenotto</li>
+      <li onClick={() => navigate("/yhteydenotto")}>Tilaukset</li>
       <li onClick={() => navigate("/taidenayttely")}>Taidenäyttely</li>
 
       <li onClick={() => goToSection("footer")}>Yhteystiedot</li>
