@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const API = import.meta.env.VITE_API_URL;
+
 const EditMenu = () => {
   const [menu, setMenu] = useState([]);
   const [editing, setEditing] = useState(null);
@@ -20,7 +22,7 @@ const EditMenu = () => {
   // Load menu items
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/menu")
+      .get(`${API}/menu`)
       .then((res) => setMenu(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -47,7 +49,7 @@ const EditMenu = () => {
       erikoisruokavalio: form.erikoisruokavalio.split(",").map((a) => a.trim()),
     };
 
-    await axios.put(`http://localhost:5000/api/menu/${editing}`, updated);
+    await axios.put(`${API}/menu/${editing}`, updated);
     window.location.reload();
   };
 
@@ -59,7 +61,7 @@ const EditMenu = () => {
       erikoisruokavalio: form.erikoisruokavalio.split(",").map((a) => a.trim()),
     };
 
-    await axios.post("http://localhost:5000/api/menu", newItem);
+    await axios.post(`${API}/menu`, newItem);
     window.location.reload();
   };
 
@@ -67,7 +69,7 @@ const EditMenu = () => {
   const deleteItem = async (id) => {
     if (!confirm("Poistetaanko tuote?")) return;
 
-    await axios.delete(`http://localhost:5000/api/menu/${id}`);
+    await axios.delete(`${API}/menu/${id}`);
     window.location.reload();
   };
 

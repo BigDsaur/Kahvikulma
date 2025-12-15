@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+const API = import.meta.env.VITE_API_URL;
+
 const EditHours = () => {
   const [hours, setHours] = useState([]);
   const [editing, setEditing] = useState(null);
@@ -14,7 +16,7 @@ const EditHours = () => {
 
   // Load hours on startup
   useEffect(() => {
-    axios.get("http://localhost:5000/api/opening-hours")
+    axios.get(`${API}/opening-hours`)
       .then(res => setHours(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -32,20 +34,20 @@ const EditHours = () => {
 
   // Save edited day
   const saveEdit = async () => {
-    await axios.put(`http://localhost:5000/api/opening-hours/${editing}`, form);
+    await axios.put(`${API}/opening-hours/${editing}`, form);
     window.location.reload();
   };
 
   // Add new day
   const addNew = async () => {
-    await axios.post("http://localhost:5000/api/opening-hours", form);
+    await axios.post(`${API}/opening-hours`, form);
     window.location.reload();
   };
 
   // Delete a day
   const deleteDay = async (id) => {
     if (!confirm("Poistetaanko tämä päivä?")) return;
-    await axios.delete(`http://localhost:5000/api/opening-hours/${id}`);
+    await axios.delete(`${API}/opening-hours/${id}`);
     window.location.reload();
   };
 
