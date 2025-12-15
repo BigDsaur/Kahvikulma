@@ -16,7 +16,7 @@ const EditHours = () => {
 
   // Load hours on startup
   useEffect(() => {
-    axios.get(`${API}/api/opening-hours`, { withCredentials: true })
+    axios.get(`${API}/menu`)
       .then(res => setHours(res.data))
       .catch(err => console.error(err));
   }, []);
