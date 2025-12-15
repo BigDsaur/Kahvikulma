@@ -16,9 +16,10 @@ const EditHours = () => {
 
   // Load hours on startup
   useEffect(() => {
-    axios.get(`${API}/api/opening-hours`)
-      .then(res => setHours(res.data))
-      .catch(err => console.error(err));
+    axios
+      .get(`${API}/api/opening-hours`, { withCredentials: true })
+      .then((res) => setHours(res.data))
+      .catch((err) => console.error("Error loading hours:", err));
   }, []);
 
   // Editing existing day
@@ -32,22 +33,37 @@ const EditHours = () => {
     });
   };
 
-  // Save edited day
   const saveEdit = async () => {
-    await axios.put(`${API}/api/opening-hours/${id}`, updatedHour, { withCredentials: true }, form);
+    const updatedHour = {
+      day: form.day,
+      open: form.open,
+      close: form.close
+    };
+
+    await axios.put(
+      `${API}/api/opening-hours/${editing}`, updatedHour, { withCredentials: true }
+    );
+
     window.location.reload();
   };
 
   // Add new day
   const addNew = async () => {
-    await axios.post(`${API}/api/opening-hours`, newHour, { withCredentials: true }, form);
+    const newHour = {
+      day: form.day,
+      open: form.open,
+      close: form.close
+    };
+
+    await axios.post(`${API}/api/opening-hours`, newHour, {withCredentials: true});
     window.location.reload();
   };
 
   // Delete a day
   const deleteDay = async (id) => {
     if (!confirm("Poistetaanko tämä päivä?")) return;
-    await axios.delete(`${API}/api/opening-hours/${id}`, { withCredentials: true });
+
+    await axios.delete(`${API}/api/opening-hours/${id}`, {withCredentials: true});
     window.location.reload();
   };
 
