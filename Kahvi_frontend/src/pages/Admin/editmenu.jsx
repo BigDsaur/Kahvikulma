@@ -22,7 +22,7 @@ const EditMenu = () => {
   // Load menu items
   useEffect(() => {
     axios
-      .get(`${API}/menu`)
+      .get(`${API}/api/menu`)
       .then((res) => setMenu(res.data))
       .catch((err) => console.error(err));
   }, []);
