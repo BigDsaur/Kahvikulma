@@ -22,7 +22,7 @@ const EditMenu = () => {
   // Load menu items
   useEffect(() => {
     axios
-      .get(`${API}/api/menu`)
+      .get(`${API}/menu`)
       .then((res) => setMenu(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -49,7 +49,7 @@ const EditMenu = () => {
       erikoisruokavalio: form.erikoisruokavalio.split(",").map((a) => a.trim()),
     };
 
-    await axios.put(`${API}/api/menu/${editing}`, updated);
+    await axios.put(`${API}/api/menu/${editing}`, updated, { withCredentials: true });
     window.location.reload();
   };
 
@@ -61,7 +61,7 @@ const EditMenu = () => {
       erikoisruokavalio: form.erikoisruokavalio.split(",").map((a) => a.trim()),
     };
 
-    await axios.post(`${API}/menu`, newItem);
+    await axios.post(`${API}/api/menu`, newItem, { withCredentials: true });
     window.location.reload();
   };
 
@@ -69,7 +69,7 @@ const EditMenu = () => {
   const deleteItem = async (id) => {
     if (!confirm("Poistetaanko tuote?")) return;
 
-    await axios.delete(`${API}/api/menu/${id}`);
+    await axios.delete(`${API}/api/menu/${id}`, { withCredentials: true });
     window.location.reload();
   };
 
