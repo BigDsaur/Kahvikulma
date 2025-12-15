@@ -12,8 +12,11 @@ app.use(cors({
     "http://localhost:5173",
     "https://kahvikulma-frontend.onrender.com"
   ],
-  credentials: true                // allow cookies
-}));
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],              // allow cookies
+  })
+);
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI)
