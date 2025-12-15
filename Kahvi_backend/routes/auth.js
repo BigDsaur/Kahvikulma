@@ -30,8 +30,8 @@ router.post("/login", async (req, res) => {
     // Send token as HTTP-only cookie
     res.cookie("token", token, {
         httpOnly: true,
-        secure: false,
-        sameSite: "lax",
+        secure: true,       // required for HTTPS on Render
+        sameSite: "None",    // required for cross-domain cookies
         maxAge: 1000 * 60 * 1,  // 1 minute
     });
 
