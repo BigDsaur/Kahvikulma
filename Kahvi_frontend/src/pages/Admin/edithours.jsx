@@ -16,7 +16,7 @@ const EditHours = () => {
 
   // Load hours on startup
   useEffect(() => {
-    axios.get(`${API}/opening-hours`)
+    axios.get(`${API}/api/opening-hours`)
       .then(res => setHours(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -34,20 +34,20 @@ const EditHours = () => {
 
   // Save edited day
   const saveEdit = async () => {
-    await axios.put(`${API}/opening-hours/${editing}`, form);
+    await axios.put(`${API}/api/opening-hours/${editing}`, form);
     window.location.reload();
   };
 
   // Add new day
   const addNew = async () => {
-    await axios.post(`${API}/opening-hours`, form);
+    await axios.post(`${API}/api/opening-hours`, form);
     window.location.reload();
   };
 
   // Delete a day
   const deleteDay = async (id) => {
     if (!confirm("Poistetaanko tämä päivä?")) return;
-    await axios.delete(`${API}/opening-hours/${id}`);
+    await axios.delete(`${API}/api/opening-hours/${id}`);
     window.location.reload();
   };
 
