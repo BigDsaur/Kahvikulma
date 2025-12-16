@@ -8,30 +8,40 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const goToSection = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+  const goToTopOfHome = () => {
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 100);
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  setOpen(false);
-};
+    setOpen(false);
+  };
+
+  // Scroll to footer on CURRENT page
+  const goToFooter = () => {
+    document.getElementById("footer")?.scrollIntoView({ behavior: "smooth" });
+    setOpen(false);
+  };
 
 
   return (
     <nav className="navbar">
 
   <div className="navbar-left">
-    <img src={logo} className="nav-logo" onClick={() => navigate("/")} />
+    <img src={logo} className="nav-logo" onClick={() => goToTopOfHome()} />
   </div>
 
   <div className="nav-center">
     <ul className={`navbar-links ${open ? "open" : ""}`}>
-      <li onClick={() => navigate("/")}>Meistä</li>
+      <li onClick={() => goToTopOfHome()}>Meistä</li>
       <li><a href="/menu">Tuotteet</a></li>
       <li onClick={() => navigate("/yhteydenotto")}>Tilaukset</li>
       <li onClick={() => navigate("/taidenayttely")}>Taidenäyttely</li>
 
-      <li onClick={() => goToSection("footer")}>Yhteystiedot</li>
+      <li onClick={() => goToFooter()}>Yhteystiedot</li>
     </ul>
   </div>
 
