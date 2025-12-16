@@ -31,18 +31,37 @@ const Menu = () => {
 
             {menuItems
               .filter((item) => item.luokka === cat)
-              .map((item) => (
-                <div className="menu-row" key={item._id}>
-                  <div className="menu-row-header">
-                    <span className="menu-name">{item.nimi}</span>
-                    <span className="menu-dots"></span>
-                    <span className="menu-price">{item.hinta} €</span>
+              .map((item) => {
+                const ainesosat = (item.ainesosat || []).filter(a => a.trim() !== "");
+                const erikoisruokavalio = (item.erikoisruokavalio || []).filter(e => e.trim() !== "");
+                
+                return (
+                  <div className="menu-row" key={item._id}>
+                    <div className="menu-row-header">
+                      <span className="menu-name">{item.nimi}</span>
+                      <span className="menu-dots"></span>
+                      <span className="menu-price">{item.hinta} €</span>
+                    </div>
+
+                    {ainesosat.length > 0 && (
+                      <p className="menu-ingredients">
+                        <b>Ainesosat:</b> {ainesosat.join(", ")}
+                      </p>
+                    )}
+
+                    {erikoisruokavalio.length > 0 && (
+                      <p className="menu-erikoisruokavaliot">
+                        <b>Erikoisruokavaliot:</b>{" "}
+                        {erikoisruokavalio.join(", ")}
+                      </p>
+                    )}
+
+                    {item.kuvaus && (
+                      <p className="menu-description">{item.kuvaus}</p>
+                    )}
                   </div>
-                  <p className="menu-ingredients"><b>Ainesosat:</b> {item.ainesosat.join(", ")}</p>
-                  <p className="menu-erikoisruokavaliot"><b>Erikoisruokavaliot:</b> {item.erikoisruokavalio.join(", ")}</p>
-                  <p className="menu-description">{item.kuvaus}</p>
-                </div>
-              ))}
+                );
+              })}
           </div>
         ))}
       </div>

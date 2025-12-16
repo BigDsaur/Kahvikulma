@@ -88,7 +88,7 @@ const Yhteydenotto = () => {
               </a>{" "}
               määritetyllä tavalla. *
             </label>
-            <button type="submit" disabled={!consent}>
+            <button type="submit" disabled={!consent} style={{ marginBottom: "20px" }}>
               Lähetä viesti
             </button>
           </form>

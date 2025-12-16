@@ -20,21 +20,12 @@ const App = () => {
       <Routes>
         {/* Homepage */}
         <Route path="/" element={<Kotisivu />} />
-
-
         <Route path="/yhteydenotto" element={<Yhteydenotto />} />
-        
-
-
-        {/* Menu page */}
         <Route path="/menu" element={<Menu />} />
         <Route path="/taidenayttely" element={<Taidenayttely />} />
 
-
         <Route path="/tietosuojaseloste" element={<Tietosuojaseloste />} />
 
-
-        {/* Admin pages */}
         <Route path="/admin/login" element={<Login />} />
         <Route path="/admin" element={<RequireAdmin><Admin /></RequireAdmin>} />
         <Route path="/admin/menu" element={<RequireAdmin><EditMenu /></RequireAdmin>} />

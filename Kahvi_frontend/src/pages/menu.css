@@ -3,20 +3,16 @@ h1{
   font-size: 2.5rem;
 }
 
-.menu-ingredients {
-  font-size: 0.85rem;
-  opacity: 0.85;
-  margin-top: -1px;
-}
-
+.menu-ingredients,
 .menu-erikoisruokavaliot {
   font-size: 0.85rem;
   opacity: 0.85;
-  margin-top: -15px;
+  margin: 2px 0;
 }
 
 .menu-list-container {
-  background-color: #f78dcb41;
+  border: 1px solid #000000;
+  background-color: #c3fcf45b;
   max-width: 900px;
   margin: 40px auto;
   padding: 20px;
@@ -56,5 +52,5 @@ h1{
 
 .menu-description {
   margin-top: 5px;
-  color: #7d6a4a;
+  color: #000000;
 }

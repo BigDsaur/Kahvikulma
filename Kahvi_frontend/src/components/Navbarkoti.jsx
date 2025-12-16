@@ -9,21 +9,13 @@ const Navbar = () => {
   const location = useLocation();
 
   const goToSection = (id) => {
-    if (location.pathname !== "/") {
-      // Redirect to homepage first
-      navigate("/");
-
-      // Wait a tiny moment to ensure homepage loads
-      setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
-    } else {
-      // Already on homepage → scroll directly
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
     }
+  setOpen(false);
+};
 
-    setOpen(false);
-  };
 
   return (
     <nav className="navbar">
@@ -34,7 +26,7 @@ const Navbar = () => {
 
   <div className="nav-center">
     <ul className={`navbar-links ${open ? "open" : ""}`}>
-      <li onClick={() => goToSection("meista")}>Meistä</li>
+      <li onClick={() => navigate("/")}>Meistä</li>
       <li><a href="/menu">Tuotteet</a></li>
       <li onClick={() => navigate("/yhteydenotto")}>Tilaukset</li>
       <li onClick={() => navigate("/taidenayttely")}>Taidenäyttely</li>
