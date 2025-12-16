@@ -44,7 +44,7 @@ const Kotisivu = () => {
           leivonnaisia, kuten pullaa, kääretorttua sekä
           marjapiirakkaa.
         </p>
-        <p>Lisäki valikoimassamme on päivittäin myös
+        <p>Lisäksi valikoimassamme on päivittäin myös
           gluteenittomia vaihtoehtoja.
         </p>
       </div>
